@@ -1,0 +1,8 @@
+ALTER PROCEDURE PROC_NOTASEMITIDASPORCFOP
+AS
+BEGIN
+	SELECT CFOP,SUM(BaseIcms)[Valor Total da Base de ICMS], SUM(VALORICMS) [Valor Total do ICMS], SUM(BASEIPI) [Valor Total da Base de IPI], 
+		   SUM(VALORIPI) [Valor Total do IPI] FROM NotaFiscalItem(NOLOCK) 
+			GROUP BY CFOP
+END
+
